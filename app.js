@@ -9,9 +9,9 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
-const oddNumbers = randomNumbers.filter(number => {
-  if (number % 2 != 0) {
-    return number
+const oddNumbers = randomNumbers.filter(randomNumber => {
+  if (randomNumber % 2 != 0) {
+    return randomNumber
   }
 })
 
@@ -25,8 +25,8 @@ console.log(oddNumbers)
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
-const lessThen = crazyNumbers.reduce((accumulator, number) => {
-  if (number < 501) {
+const lessThen = crazyNumbers.reduce((accumulator, crazyNumber) => {
+  if (crazyNumber < 501) {
     accumulator ++
   }
   return accumulator
@@ -70,11 +70,11 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
-const oldTarantinoMovies = tarantinoMovies.filter(movie => {
-  if (movie.release < 2000) {
+const oldTarantinoMovies = tarantinoMovies.filter(tarantinoMovie => {
+  if (tarantinoMovie.release < 2000) {
     return {
-      name: movie.name,
-      release: movie.release
+      name: tarantinoMovie.name,
+      release: tarantinoMovie.release
     }
   }
 })
@@ -98,7 +98,9 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
+const nameTvShows = tvShows.map(tvShow => tvShow.name)
 
+console.log(nameTvShows)
 
 /*
   06
@@ -111,13 +113,20 @@ const tvShows = [
   especial \n.
 */
 
-const cart = [
+const carts = [
   { name: 'Dark Souls III', price: 95.03 },
   { name: 'Shadow of the Tomb Raider', price: 101.19 },
   { name: 'Sekiro: Shadows Die Twice', price: 179.99 },
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const nameCarts = carts.reduce((accumulator, cart, index) => {
+  accumulator += `- ${index +1}: ${cart.name}\n`
+  return accumulator
+}, "")
+
+console.log(nameCarts)
 
 /*
 - Nome 1
